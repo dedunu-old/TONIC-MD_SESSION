@@ -70,7 +70,7 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "TONIC-XMD~" + string_session;
+                        let md = "TONIC-MD~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
                         let desc = `*Hello there TONIC MD User! 👋🏻* 
 
@@ -92,8 +92,8 @@ text: desc,
 contextInfo: {
 externalAdReply: {
 title: " 𝖇𝖔𝖙 𝖈𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉",
-thumbnailUrl: "https://files.catbox.moe/7pg2gp.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z",
+thumbnailUrl: "https://files.catbox.moe/d79cay.jpg",
+sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
 mediaType: 1,
 renderLargerThumbnail: true
 }  
@@ -102,7 +102,7 @@ renderLargerThumbnail: true
 {quoted:code })
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `*Hello there MALVIN XMD User! 👋🏻* 
+                            let desc = `*Hello there TONIC MD User! 👋🏻* 
 
 > Do not share your session id with anyone.
 
@@ -122,8 +122,8 @@ text: desc,
 contextInfo: {
 externalAdReply: {
 title: " 𝖒𝖉 𝖈𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉 ✅  ",
-thumbnailUrl: "https://files.catbox.moe/7pg2gp.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z",
+thumbnailUrl: "https://files.catbox.moe/d79cay.jpg",
+sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
 mediaType: 2,
 renderLargerThumbnail: true,
 showAdAttribution: true
