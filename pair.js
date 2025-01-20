@@ -91,14 +91,14 @@ Dont forget to fork the repo ⬇️
 
 https://github.com/tonic3057/TONIC-MD
 
-> *© Powered 🚀*`; 
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴏɴɪᴄ ᴛᴇᴄʜ™*`; 
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "JawadTechX",
-thumbnailUrl: "https://files.catbox.moe/7pg2gp.jpg",
-sourceUrl: "https://whatsapp",
+title: "Tonic Tech enc",
+thumbnailUrl: "https://imgur.com/a/lTegwqX",
+sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
 mediaType: 1,
 renderLargerThumbnail: true
 }  
@@ -112,9 +112,9 @@ renderLargerThumbnail: true
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "MALVIN-XMD",
-thumbnailUrl: "https://files.catbox.moe/7pg2gp.jpg",
-sourceUrl: "https://whatsapp.com",
+title: "TONIC-MD",
+thumbnailUrl: "https://imgur.com/a/lTegwqX",
+sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
 mediaType: 2,
 renderLargerThumbnail: true,
 showAdAttribution: true
