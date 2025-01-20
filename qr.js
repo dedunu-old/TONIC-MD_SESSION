@@ -70,23 +70,23 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "MALVIN-XMD~" + string_session;
+                        let md = "TONIC-XMD~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hello there MALVIN XMD User! 👋🏻* 
+                        let desc = `*Hello there TONIC MD User! 👋🏻* 
 
 > Do not share your session id with anyone.
 
- *Thanks for using MALVIN-XMD 🚩* 
+ *Thanks for using TONIC-MD 🚩* 
 
 > Join WhatsApp Channel :- ⤵️
  
-https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
+https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f
 
 Dont forget to fork the repo ⬇️
 
-https://github.com/kingmalvn/MALVIN-XMD 
+https://github.com/kingmalvn/TONIC-MD 
 
-> *© Powered BY MalvinTechX 🖤*`;
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴏɴɪᴄ ᴛᴇᴄʜ🖤*`;
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
