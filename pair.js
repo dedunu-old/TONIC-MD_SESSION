@@ -97,7 +97,7 @@ text: desc,
 contextInfo: {
 externalAdReply: {
 title: "Tonic Tech enc",
-thumbnailUrl: "https://imgur.com/a/lTegwqX",
+thumbnailUrl: "https://files.catbox.moe/d79cay.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
 mediaType: 1,
 renderLargerThumbnail: true
@@ -113,7 +113,7 @@ text: desc,
 contextInfo: {
 externalAdReply: {
 title: "TONIC-MD",
-thumbnailUrl: "https://imgur.com/a/lTegwqX",
+thumbnailUrl: "https://files.catbox.moe/d79cay.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
 mediaType: 2,
 renderLargerThumbnail: true,
