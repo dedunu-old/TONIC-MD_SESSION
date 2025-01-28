@@ -85,7 +85,7 @@ var randomItem = selectRandomItem(items);
 
 > Join WhatsApp Channel :- ⤵️
  
-https://whatsapp.
+https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f
 
 Dont forget to fork the repo ⬇️
 
@@ -96,7 +96,7 @@ https://github.com/tonic3057/TONIC-MD
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "Tonic Tech enc",
+title: "Tonic Tech inc",
 thumbnailUrl: "https://files.catbox.moe/d79cay.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
 mediaType: 1,
