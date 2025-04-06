@@ -89,7 +89,7 @@ https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f
 
 Dont forget to fork the repo ⬇️
 
-https://github.com/tonic3057/TONIC-MD
+https://github.com/tonicmeef/TONIC-MD
 
 > *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴏɴɪᴄ ᴛᴇᴄʜ™*`; 
                         await sock.sendMessage(sock.user.id, {
