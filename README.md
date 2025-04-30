@@ -1,2 +1,2 @@
-# XMD-PAIR
-A session generator platform for all bots created by malvin king
+TONIC-MD-PAIR
+A session generator platform for all bots created by Tonic Munodawafa
