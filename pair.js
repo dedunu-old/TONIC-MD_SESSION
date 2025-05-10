@@ -77,28 +77,32 @@ var randomItem = selectRandomItem(items);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "TONIC-MD~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hello there ! 👋🏻* 
+                        let desc = `┏━━━━━━━━━━━━━━
+┃SOLO-LEVELING MD SESSION IS 
+┃SUCCESSFULLY
+┃CONNECTED ✅🔥
+┗━━━━━━━━━━━━━━━
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+⛩️ || *_CREATED BY = ᴅ.ʀᴜᴋꜱʜᴀɴ ( ʀᴇᴅ ꜱᴀᴍᴜʀᴀʏ🐉)_*
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+⛩️ || *WHATSAPP CHANNEL = https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38*
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+⛩️ || *ANIME CHANNEL = https://whatsapp.com/channel/0029VbAjwpWAojYrZOdaVO0i*
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+⛩️ || *TELEGRAM = https://t.me/legionofdoom999*
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-> Do not share your session id with anyone.
-
- *Thanks for using TONIC-MD 🚩* 
-
-> Join WhatsApp Channel :- ⤵️
- 
-https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f
-
-Dont forget to fork the repo ⬇️
-
-https://github.com/tonicmeef/TONIC-MD
-
-> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴏɴɪᴄ ᴛᴇᴄʜ™*`; 
+🐉 *ABOUT = 私がこのプログラムを始めた理由は、SOLO-LEVELING アニメのためです。🇯🇵*
+🐉 *THANK ALL PEPPERS🎗️*
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+> *® ᴄʀᴇᴀᴛᴇᴅ ʙʏ ʀᴜᴋꜱʜᴀɴ ʟᴏᴅ ᴛᴇᴍ*`; 
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "Tonic Tech inc",
-thumbnailUrl: "https://files.catbox.moe/d79cay.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
+title: "SOLO LEVELING SESSION ID SUCCESSFUL",
+thumbnailUrl: "https://files.catbox.moe/9gnp53.jpeg",
+sourceUrl: "https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38",
 mediaType: 1,
 renderLargerThumbnail: true
 }  
@@ -107,14 +111,14 @@ renderLargerThumbnail: true
 {quoted:code })
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `*Don't Share with anyone this code use for deploying TONIC-MD*\n\n ◦ *Github:* https://github.com/tonic3057/TONIC-MD`;
+                            let desc = `*Don't Share with anyone this code use for deploying SOLO-LEVELING-MD*\n\n ◦ *Github:* https://github.com/RUKA-BOT-TEST/SOLO-LEVELING`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "TONIC-MD",
-thumbnailUrl: "https://files.catbox.moe/d79cay.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f",
+title: "SOLO LEVELING SESSION ID SUCCESSFUL",
+thumbnailUrl: "https://files.catbox.moe/9gnp53.jpeg",
+sourceUrl: "https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38",
 mediaType: 2,
 renderLargerThumbnail: true,
 showAdAttribution: true
