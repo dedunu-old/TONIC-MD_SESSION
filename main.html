@@ -1,79 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOLO LEVELING SITE</title>
+  <link rel="shortcut icon" href="" type="image/x-icon" />
   <style>
-    body {
-      background-color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    * {
       margin: 0;
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "url": "https://railway.app",
-            "logo": "https://files.catbox.moe/f19lw7.jpeg"
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
     }
 
     .button-container {
-      text-align: center;
+      position: relative;
+      z-index: 2;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      backdrop-filter: brightness(0.7);
+      animation: introZoom 2s ease-in-out forwards;
+      opacity: 0;
+      transform: scale(0.9);
     }
 
     h3 {
-      margin-top: -40px;
-      opacity: 0;
+      margin-bottom: 20px;
       animation: fadeIn 3s forwards;
+      opacity: 0;
     }
 
     .button {
-      width: 140px;
+      width: 160px;
       height: 40px;
+      margin: 8px 0;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       padding: 0px 15px;
-      background-color: red;
+      background: linear-gradient(0deg, #000, #272727);
       border-radius: 10px;
       border: none;
       color: white;
       position: relative;
       cursor: pointer;
       font-weight: 900;
-      transition-duration: .2s;
-      background: linear-gradient(0deg, #000, #272727);
       text-decoration: none;
+      transition-duration: 0.2s;
+      animation: fadeInUp 1s ease-in-out forwards;
+      opacity: 0;
     }
 
-  
-    footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #222; /* Darker gray footer background */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    
-  }
-    .button:before, .button:after {
+    .button:nth-child(n+2) { animation-delay: 1s; }
+    .button:nth-child(n+3) { animation-delay: 1.2s; }
+    .button:nth-child(n+4) { animation-delay: 1.4s; }
+    .button:nth-child(n+5) { animation-delay: 1.6s; }
+
+    .button:before,
+    .button:after {
       content: '';
       position: absolute;
       left: -2px;
       top: -2px;
       border-radius: 10px;
-      background: linear-gradient(45deg, #48ff00, #15ff00, #000000,#000000, #ff0000);
+      background: linear-gradient(45deg, #48ff00, #15ff00, #000000, #000000, #ff0000);
       background-size: 400%;
       width: calc(100% + 4px);
       height: calc(100% + 4px);
@@ -81,55 +94,125 @@
       animation: steam 10s linear infinite;
     }
 
-    @keyframes steam {
-      0% {
-        background-position: 0 0;
-      }
-
-      50% {
-        background-position: 400% 0;
-      }
-
-      100% {
-        background-position: 0 0;
-      }
-    }
-
     .button:after {
       filter: blur(50px);
     }
 
-    .button span {
-      z-index: 1;
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      z-index: 3;
+      animation: fadeIn 2s forwards;
+    }
+
+    .sound-controls {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .sound-btn {
+      background: #00ff00;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      animation: fadeInUp 2s ease-in-out forwards;
+    }
+
+    .sound-btn.off {
+      background: #ff0000;
+      color: white;
+    }
+
+    @keyframes steam {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
     }
 
     @keyframes fadeIn {
-      to {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
         opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes introZoom {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- 🔊 Background Video -->
+  <video id="bg-video" autoplay muted loop>
+    <source src="https://files.catbox.moe/52py80.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- 🌟 Button Content -->
   <div class="button-container">
-    <h3>🐉 SOLO LEVELING SESSION SITE 🐉</h3>
-    <div></div>
-    <a href="/qr" class="button" target="_blank"> <span>QR-CODE</span> </a> <br>
-    <a href="/pair" class="button" target="_blank"> <span>PAIRING-CODE</span> </a> <br>
-        <a href="https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38" class="button" target="_blank"> <span>SUPPORT CHANNEL</span> </a> <br>
-            <a href="https://whatsapp.com/channel/0029VbAjwpWAojYrZOdaVO0i" class="button" target="_blank"> <span>ANIME CHANNEL</span> </a> <br>
-            
-    <a href="https://github.com/RUKA-BOT-TEST/SOLO-LEVELING/fork" class="button" target="_blank"> <span>FORK BOT</span> </a> <br>
+    <h3>🐉 𝐒𝐎𝐋𝐎 𝐋𝐄𝐕𝐄𝐋𝐈𝐍𝐆 𝐒𝐄𝐒𝐒𝐎𝐍 𝐒𝐈𝐓𝐄 𝐖𝐄𝐁 🐉</h3>
 
+    <a href="/qr" class="button" target="_blank"><span>QR-CODE</span></a>
+    <a href="/pair" class="button" target="_blank"><span>PAIRING-CODE</span></a>
+    <a href="https://whatsapp.com/channel/0029VbAWWH9BFLgRMCXVlU38" class="button" target="_blank"><span>SUPPORT CHANNEL</span></a>
+    <a href="https://whatsapp.com/channel/0029VbAjwpWAojYrZOdaVO0i" class="button" target="_blank"><span>ANIME CHANNEL</span></a>
+    <a href="https://github.com/RUKA-BOT-TEST/SOLO-LEVELING/fork" class="button" target="_blank"><span>FORK BOT</span></a>
     <p>⛩️ YOU HAVE ERROR CLICK ERROR BUTTON 🛠️</p>
+    <a href="https://wa.me/+94774589636?text=erro" class="button" target="_blank"><span>ERROR</span></a>
+    <a href="https://t.me/legionofdoom999" class="button" target="_blank"><span>TELEGRAM</span></a>
 
-    <a href="https://wa.me/+94774589636?text=erro" class="button" target="_blank"> <span>ERROR</span> </a> <br>
-        <a href="https://t.me/legionofdoom999" class="button" target="_blank"> <span>TELEGRAM</span> </a> <br>
+    <!-- 🔊 Sound Buttons -->
+    <div class="sound-controls">
+      <button class="sound-btn" onclick="enableSound()">🔊 SOUND ON</button>
+      <button class="sound-btn off" onclick="disableSound()">🔇 SOUND OFF</button>
+    </div>
+  </div>
 
+  <!-- ⌛ Footer -->
+  <footer>
+    𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐎𝐋𝐎 𝐋𝐄𝐕𝐄𝐋𝐈𝐍𝐆 𝐈𝐍 𝐑𝐔𝐊𝐒𝐇𝐀𝐍 ® &copy; <span id="currentYear"></span>
+  </footer>
 
-    <footer>
-      𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐎𝐋𝐎 𝐋𝐄𝐕𝐄𝐋𝐈𝐍𝐆 𝐈𝐍 𝐑𝐔𝐊𝐒𝐇𝐀𝐍 ® &copy; <span id="currentYear"></span>
-    </footer>
-  
+  <!-- ⚙️ Script -->
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    function enableSound() {
+      const video = document.getElementById("bg-video");
+      video.muted = false;
+      video.play();
+    }
+
+    function disableSound() {
+      const video = document.getElementById("bg-video");
+      video.muted = true;
+    }
+  </script>
 </body>
-</html>
+    </html>
