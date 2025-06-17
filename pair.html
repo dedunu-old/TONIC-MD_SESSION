@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SOLO LEVELING PAIR</title>
-  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/all.min.css" />
   <style>
     /* Background Video Styles */
     #background-video {
@@ -15,6 +15,26 @@
       min-height: 100%;
       z-index: -1;
       object-fit: cover;
+    }
+
+    /* Sound toggle button */
+    #sound-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    #sound-toggle:hover {
+      background-color: rgba(0, 0, 0, 0.85);
     }
 
     body {
@@ -44,7 +64,9 @@
       box-shadow: none;
     }
 
-    #text, .input-container input, .centered-text {
+    #text,
+    .input-container input,
+    .centered-text {
       color: #000;
     }
 
@@ -91,7 +113,7 @@
     }
 
     .input-container button:hover {
-      background: linear-gradient(135deg, #A8E4A0 0%, #32CD32 100%);
+      background: linear-gradient(135deg, #a8e4a0 0%, #32cd32 100%);
       color: red;
     }
 
@@ -100,7 +122,8 @@
         flex-direction: column;
       }
 
-      .input-container input, .input-container button {
+      .input-container input,
+      .input-container button {
         border-radius: 0.8rem;
       }
     }
@@ -115,53 +138,55 @@
       font-weight: bold;
       color: white;
       text-shadow:
-        0 0 5px #FF0000,
-        0 0 10px #FF0000,
-        0 0 15px #FF4500,
-        0 0 20px #FF4500,
-        0 0 25px #FF6347,
-        0 0 30px #FF6347;
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 15px #ff4500,
+        0 0 20px #ff4500,
+        0 0 25px #ff6347,
+        0 0 30px #ff6347;
       animation: glow 2s infinite;
     }
 
     @keyframes glow {
       0% {
         text-shadow:
-          0 0 5px #FF0000,
-          0 0 10px #FF0000,
-          0 0 15px #FF4500,
-          0 0 20px #FF4500,
-          0 0 25px #FF6347,
-          0 0 30px #FF6347;
+          0 0 5px #ff0000,
+          0 0 10px #ff0000,
+          0 0 15px #ff4500,
+          0 0 20px #ff4500,
+          0 0 25px #ff6347,
+          0 0 30px #ff6347;
       }
       50% {
         text-shadow:
-          0 0 5px #32CD32,
-          0 0 10px #32CD32,
-          0 0 15px #32CD32,
-          0 0 20px #7CFC00,
-          0 0 25px #ADFF2F,
-          0 0 30px #ADFF2F;
+          0 0 5px #32cd32,
+          0 0 10px #32cd32,
+          0 0 15px #32cd32,
+          0 0 20px #7cfc00,
+          0 0 25px #adff2f,
+          0 0 30px #adff2f;
       }
       100% {
         text-shadow:
-          0 0 5px #1E90FF,
-          0 0 10px #1E90FF,
-          0 0 15px #00BFFF,
-          0 0 20px #00BFFF,
-          0 0 25px #87CEFA,
-          0 0 30px #87CEFA;
+          0 0 5px #1e90ff,
+          0 0 10px #1e90ff,
+          0 0 15px #00bfff,
+          0 0 20px #00bfff,
+          0 0 25px #87cefa,
+          0 0 30px #87cefa;
       }
     }
   </style>
 </head>
 <body>
-
   <!-- Background Video -->
-  <video autoplay muted loop id="background-video">
-    <source src="https://files.catbox.moe/9bt2lh.mp4" type="video/mp4">
+  <video autoplay muted loop id="background-video" playsinline>
+    <source src="https://files.catbox.moe/9bt2lh.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+
+  <!-- Sound toggle button -->
+  <button id="sound-toggle" aria-label="Toggle sound">🔇 Sound Off</button>
 
   <!-- Foreground UI -->
   <div class="container">
@@ -169,10 +194,10 @@
       <div class="box" id="box">
         <div id="text">
           <i class="fa fa-user"></i>
-          <h2 class="centered-text"> SOLO LEVELING-MD PAIR</h2>           
+          <h2 class="centered-text"> SOLO LEVELING-MD PAIR</h2>
           <h6> Enter your number with country code.📥 </h6>
           <div class="input-container">
-            <input placeholder="9477XXXXXXX" type="number" id="number" name="">
+            <input placeholder="9477XXXXXXX" type="number" id="number" name="" />
             <button id="submit">enter</button>
           </div>
           <a id="waiting-message" class="centered-text" style="display: none;">in process...</a>
@@ -186,6 +211,20 @@
   <!-- Axios -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
+    const video = document.getElementById("background-video");
+    const soundToggle = document.getElementById("sound-toggle");
+
+    // Initially muted, so button shows Sound Off
+    soundToggle.addEventListener("click", () => {
+      if (video.muted) {
+        video.muted = false;
+        soundToggle.textContent = "🔊 Sound On";
+      } else {
+        video.muted = true;
+        soundToggle.textContent = "🔇 Sound Off";
+      }
+    });
+
     let a = document.getElementById("pair");
     let b = document.getElementById("submit");
     let c = document.getElementById("number");
@@ -193,7 +232,7 @@
     async function Copy() {
       let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
-      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+      await navigator.clipboard.writeText(obj.innerText.replace("CODE: ", ""));
       obj.innerText = "COPIED";
       obj.style = "color:blue;font-weight:bold";
       obj.size = "5";
@@ -207,15 +246,16 @@
     b.addEventListener("click", async (e) => {
       e.preventDefault();
       if (!c.value) {
-        a.innerHTML = '<a style="color:black;font-weight:bold">❗Enter your whatsapp number with country code.</a><br><br>';
+        a.innerHTML =
+          '<a style="color:black;font-weight:bold">❗Enter your whatsapp number with country code.</a><br><br>';
       } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
         a.innerHTML = '<a style="color:black;font-weight:bold">❌Invalid number format❌</a><br><br>';
       } else {
         const bc = c.value.replace(/[^0-9]/g, "");
         let bb = "";
         let bbc = "";
-        const cc = bc.split('');
-        cc.map(a => {
+        const cc = bc.split("");
+        cc.map((a) => {
           bbc += a;
           if (bbc.length == 3) {
             bb += " " + a;
@@ -231,7 +271,10 @@
         a.innerHTML = '<a style="color:black;font-weight:bold">Please wait </a><br><br>';
         let { data } = await axios(`/code?number=${bc}`);
         let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:black;font-weight:bold">' + code + '</span></font><br><br><br>';
+        a.innerHTML =
+          '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:black;font-weight:bold">' +
+          code +
+          "</span></font><br><br><br>";
       }
     });
   </script>
